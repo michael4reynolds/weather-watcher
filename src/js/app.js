@@ -58,7 +58,7 @@ const displayWeather = () => {
   const deg = Math.round(wind.deg)
   windDeg.className = classNames('wi', 'wi-wind', `towards-${deg}-deg`)
   direction.innerText = degreesToCardinal(deg)
-  const rateLabel = units === 'Imperial' ? 'mph' : 'm/s'
+  const rateLabel = units === 'imperial' ? 'mph' : 'm/s'
   windSpeed.innerText = `${Math.round(wind.speed)} ${rateLabel}`
   cloudiness.innerText = `${clouds.all}%`
 }
@@ -112,7 +112,7 @@ const getForecast = () => {
 }
 
 const styleUnits = () => {
-  const fahrenheit = units === 'Imperial'
+  const fahrenheit = units === 'imperial'
   fTempSpan.className = classNames('fahrenheit', {selected: fahrenheit})
   cTempSpan.className = classNames('celsius', {selected: !fahrenheit})
 }
@@ -137,7 +137,7 @@ const useLocation = () => {
 }
 
 const changeUnits = () => {
-  units = units === 'Metric' || units === undefined ? 'Imperial' : 'Metric'
+  units = units === 'metric' || units === undefined ? 'imperial' : 'metric'
   getWeather()
   getForecast()
   styleUnits()
